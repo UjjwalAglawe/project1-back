@@ -1,4 +1,4 @@
-package com.example.petromanage.auth.entity;
+package com.example.Backend.auth.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

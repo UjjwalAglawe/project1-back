@@ -1,4 +1,4 @@
-package com.example.petromanage.maintenance.entity;
+package com.example.Backend.maintenance.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
