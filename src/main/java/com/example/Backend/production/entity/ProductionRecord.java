@@ -1,17 +1,32 @@
-package com.example.Backend.production;
+package com.example.petromanage.production.entity;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "production_records",
+       indexes = {
+           @Index(columnList = "asset_id, productionDate"),
+           @Index(columnList = "plan_id")
+       })
 public class ProductionRecord {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long recordId; //[cite: 43]
-    private Long assetId; //[cite: 44]
-    private Double actualVolume; //[cite: 45]
-    private LocalDate date; //[cite: 46]
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long recordId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "plan_id")
+    private ProductionPlan productionPlan;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "asset_id")
+    private Asset asset;
+
+    private Double actualVolume;
+    private LocalDate productionDate;
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    // getters & setters
 }

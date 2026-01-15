@@ -1,17 +1,30 @@
-package com.example.Backend.analytics;
+package com.example.petromanage.auth.entity;
 
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 @Entity
-public class Analytics {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reportId; // [cite: 75]
-    private Double productionEfficiency; // [cite: 76]
-    private Double downtime; // [cite: 76]
-    private LocalDateTime generatedDate; // [cite: 77]
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
+
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "site_id")
+    private Site site;
+
+    private String status;
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    // getters & setters
 }
