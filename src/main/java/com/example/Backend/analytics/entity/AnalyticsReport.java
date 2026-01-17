@@ -1,9 +1,14 @@
-package com.example.backend.analytics.entity;
+package com.example.Backend.analytics.entity;
+import com.example.Backend.assets.entity.Asset;
+
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 
 @Entity
+@Data
 @Table(name = "analytics_reports")
 public class AnalyticsReport {
 

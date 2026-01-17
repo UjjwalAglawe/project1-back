@@ -1,10 +1,14 @@
 package com.example.Backend.assets.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import com.example.Backend.assets.enums.*;
 
 @Entity
+@Data
 @Table(name = "assets")
 public class Asset {
 

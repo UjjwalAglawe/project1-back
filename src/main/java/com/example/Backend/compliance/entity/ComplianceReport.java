@@ -1,9 +1,14 @@
 package com.example.Backend.compliance.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
+import com.example.Backend.assets.entity.Asset;
+import com.example.Backend.compliance.enums.ComplianceStatus;;
 
 @Entity
+@Data
 @Table(name = "compliance_reports")
 public class ComplianceReport {
 

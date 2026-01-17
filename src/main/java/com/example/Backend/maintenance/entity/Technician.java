@@ -1,8 +1,10 @@
 package com.example.Backend.maintenance.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "technicians")
 public class Technician {
 

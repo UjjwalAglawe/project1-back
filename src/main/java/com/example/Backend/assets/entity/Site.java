@@ -1,10 +1,13 @@
 package com.example.Backend.assets.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "sites")
 public class Site {
 

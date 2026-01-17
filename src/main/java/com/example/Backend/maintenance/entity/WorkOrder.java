@@ -1,11 +1,16 @@
 package com.example.Backend.maintenance.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import com.example.Backend.assets.entity.Asset;
 import java.util.List;
+import com.example.Backend.maintenance.enums.*;
 
 @Entity
+@Data
 @Table(name = "work_orders")
 public class WorkOrder {
 

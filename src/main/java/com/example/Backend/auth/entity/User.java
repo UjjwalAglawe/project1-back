@@ -2,6 +2,8 @@ package com.example.Backend.auth.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import com.example.Backend.auth.enums.UserRole;
+import com.example.Backend.assets.entity.Site;
 
 @Entity
 @Table(name = "users")
